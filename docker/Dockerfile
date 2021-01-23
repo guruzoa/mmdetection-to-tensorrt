@@ -18,7 +18,9 @@ RUN pip3 install --upgrade pip
 RUN pip3 install torch==1.6.0 torchvision==0.7.0
 
 ### install mmcv
-RUN pip3 install mmcv-full==1.1.5+torch1.6.0+cu102 -f https://openmmlab.oss-accelerate.aliyuncs.com/mmcv/dist/index.html
+#RUN pip3 install mmcv-full==1.1.5+torch1.6.0+cu102 -f https://openmmlab.oss-accelerate.aliyuncs.com/mmcv/dist/index.html
+# for compatibility with mmdetection
+RUN pip3 install mmcv-full==1.2.4+torch1.6.0+cu102 -f https://openmmlab.oss-accelerate.aliyuncs.com/mmcv/dist/index.html
 
 ### git mmdetection
 RUN git clone --depth=1 https://github.com/open-mmlab/mmdetection.git /root/space/mmdetection
